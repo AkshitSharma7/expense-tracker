@@ -1,0 +1,37 @@
+// Version: 1.0.0
+type Budget__502693421 = {category : Text; id : Nat; monthly_limit : Float};
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Expense__809941540 =
+  {
+    amount : Float;
+    category : Text;
+    created_at : Text;
+    date : Text;
+    id : Nat;
+    note : ?Text;
+    payment_method : ?Text;
+    title : Text
+  };
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+actor {
+  stable budgets :
+    {
+      var root : Node__46230540<Text, Budget__502693421>;
+      var size : Nat__490723111
+    };
+  stable expenses :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Expense__809941540]];
+      var elementIndex : Nat__490723111
+    };
+  stable var nextBudgetId : Nat;
+  stable var nextExpenseId : Nat
+};

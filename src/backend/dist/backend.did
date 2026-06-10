@@ -1,0 +1,47 @@
+type ExpenseInput = 
+ record {
+   amount: float64;
+   category: text;
+   date: text;
+   note: opt text;
+   payment_method: opt text;
+   title: text;
+ };
+type Expense = 
+ record {
+   amount: float64;
+   category: text;
+   created_at: text;
+   date: text;
+   id: nat;
+   note: opt text;
+   payment_method: opt text;
+   title: text;
+ };
+type CategorySummary = 
+ record {
+   category: text;
+   total: float64;
+ };
+type BudgetInput = 
+ record {
+   category: text;
+   monthly_limit: float64;
+ };
+type Budget = 
+ record {
+   category: text;
+   id: nat;
+   monthly_limit: float64;
+ };
+service : {
+  addExpense: (input: ExpenseInput) -> (nat);
+  deleteExpense: (id: nat) -> (bool);
+  getBudgets: () -> (vec Budget) query;
+  getExpenses: () -> (vec Expense) query;
+  getMonthlySummary: (year: nat, month: nat) -> (vec CategorySummary) query;
+  getTodaySpending: () -> (float64) query;
+  seedSampleData: () -> ();
+  setBudget: (input: BudgetInput) -> ();
+  updateExpense: (id: nat, input: ExpenseInput) -> (bool);
+}
