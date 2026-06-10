@@ -1,0 +1,20 @@
+{
+  "overview": "A fully-featured expense tracking web app with dashboard charts, budget management, transaction history, and monthly reports — all in a clean sidebar-based layout.",
+  "features": [
+    "Dashboard with summary cards and spending charts",
+    "Add expense form with validation and notifications",
+    "Transaction history with search, filters, edit/delete, and CSV export",
+    "Budget manager with progress bars per category",
+    "Monthly reports with budget vs actual charts and stats",
+    "15 sample expenses pre-loaded on first run"
+  ],
+  "category": "finance",
+  "tags": [
+    "expense-tracker",
+    "budget",
+    "finance",
+    "charts",
+    "dashboard"
+  ],
+  "last_updated": "2026-04-19T18:43:00.007Z"
+}
